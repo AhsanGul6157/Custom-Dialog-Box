@@ -57,6 +57,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
                 .setPositiveButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
                         MainActivity.updateTimeDate();
 
                     }
@@ -80,6 +81,8 @@ public class ExampleDialog extends AppCompatDialogFragment {
             }
         }, date, month, year);
         datePickerDialog.setTitle("Select Date");
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
+        datePickerDialog.show();
         datePickerDialog.show();
 
     }
